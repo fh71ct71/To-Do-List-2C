@@ -15,20 +15,60 @@
     <link rel="stylesheet" href="./Files/Images/mainLogo.jpg" type="images/x-icon">
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" type="text/css" href="styles.css">
     
 </head>
 
-<body class="bg-success">
+<body class="bg-primary">
 
     <div class="container-fluid">
 
         <div class="row mt-4">
 
-            <div class="col d-flex align-items-center justify-content-center"><img src="./Files/Images/hamburger-menu.jpg" width="30" height="30"></div>
+            <div class="col d-flex align-items-center justify-content-center">
+
+                <div class="dropdown">
+
+                    <img src="./Files/Images/hamburger-menu.jpg" width="30" height="30" data-bs-toggle="dropdown" data-bs-placement="right" title="Main Menu">
+
+                    <ul class="dropdown-menu">
+
+                        <li class="dropdown-item">All Lists</li>
+
+                        <li class="dropdown-item">Bin</li>
+                        
+                    </ul>
+
+                </div>
+
+            </div>
 
             <div class="col-6 col-md-7 col-lg-8 col-xl-9 text-white d-flex align-items-center justify-content-center"><p class="h3" id="date"></p></div>
 
-            <div class="col d-flex align-items-center justify-content-center"><img src="./Files/Images/3d-brush-and-palette-png.webp" width="60" height="60"></div>
+            <div class="col d-flex align-items-center justify-content-center">
+
+                <div class="dropdown">
+
+                    <img src="./Files/Images/3d-brush-and-palette-png.webp" width="60" height="60" data-bs-toggle="dropdown" data-bs-placement="left" title="Background of Page">
+
+                    <ul class="dropdown-menu">
+
+                        <li class="dropdown-item" id="bgR">Red</li>
+
+                        <li class="dropdown-item" id="bgG">Green</li>
+
+                        <li class="dropdown-item" id="bgB">Blue</li>
+
+                        <li class="dropdown-item" id="bgY">Yellow</li>
+
+                        <li class="dropdown-item" id="bgGr">Grey</li>
+
+                    </ul>
+
+                </div>
+                
+            </div>
 
         </div>
 
@@ -52,15 +92,44 @@
 
         </div>
 
-        <div class="row mt-5">
+        <div class="row mt-5 d-none" id="taskArea">
 
             <div class="col"></div>
 
-            <div class="col-10 col-md-8 col-lg-7 col-xl-6 bg-secondary border border-3 rounded-3" style="height: 100px;position: relative;">
+            <div class="col-10 col-md-8 col-lg-7 col-xl-6 bg-secondary border border-3 rounded-3" style="position: relative;" id="tkBG">
 
-                <img src="./Files/Images/208-2081130_color-clipart-hd-png-download.png" class="rounded-circle" style="width: 30px;height: 30px;position: absolute;right: -10px;top: -10px;">
+                <div class="dropdown">
 
-                <div style="position: absolute;bottom: -20px;right: 39%;" class="btn btn-light">+ New Task</div>
+                    <img src="./Files/Images/208-2081130_color-clipart-hd-png-download.png" class="rounded-circle" style="width: 30px;height: 30px;position: absolute;right: -20px;top: -10px;" data-bs-toggle="dropdown" data-bs-placement="top" title="Background of Task">
+
+                    <ul class="dropdown-menu">
+
+                        <li class="dropdown-item" id="tkR">Red</li>
+
+                        <li class="dropdown-item" id="tkG">Green</li>
+
+                        <li class="dropdown-item" id="tkB">Blue</li>
+
+                        <li class="dropdown-item" id="tkY">Yellow</li>
+
+                        <li class="dropdown-item" id="tkGr">Grey</li>
+
+                    </ul>
+
+                </div>
+
+                <div style="position: absolute;bottom: -20px;right: 39%;" class="btn btn-light" id="addTask">+ Add Task</div>
+
+                <input type="text" class="form-control mt-4 mx-auto" placeholder="Title" style="width: 60%;color: red;" id="title">
+
+                <div class="mt-4" id="nextTask">
+
+                    <input type="text" class="form-control-plaintext form-control-sm" placeholder="Your first-task" style="color: white;" id="task1">
+
+                </div>
+
+                
+                <input type="text" class="form-control-plaintext form-control-sm mb-2" disabled>
                 
             </div>
 
