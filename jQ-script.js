@@ -142,38 +142,53 @@ $(document).ready(function(){
 
     })
 
+    let wholeTasksData=[],titleList,taskData
+
     $("#newListBtn").click(function(){
 
       $("#taskArea").removeClass("d-none")
 
+      $("#listTitle").focus()
+          
     })
 
-    const data=["Sample List","Task 1","Task 2","Task 3","Task 4","Task 5"]
+    $("#listTitle").keypress(function(e){
 
-    var i=2
-    
-    $("#addTask").click(function(){
+      let key=e.which
 
-      $("#nextTask").append('<input type="text" class="form-control-plaintext form-control-sm mt-1" placeholder="Your next-task" style="color: white;">')
+      if(key==13){
 
-      $("input").focus(function(){
+        $("#task").focus()
 
-        $(this).val(data[i])
+        titleList=$(this).val()
 
-        i++
+      }
+
+    })
+
+    $("#task").keypress(function(e){
+
+      let key=e.which
+
+      if(key==13){
+
+        taskData=$(this).val()
+
+        $("#nextTask").append('<input type="text" class="form-control-plaintext form-control-sm mt-1 taskContent" style="color: white;">')
+
+        $(".taskContent").last().val(taskData)
+
+        wholeTasksData.push(taskData)
         
-      })
-      
-    })
+        $(this).val("")
+
+        $("#task").attr("placeholder", "Enter your next task here")
+
+      }
     
-    $("#newListBtn").click(function(){
-
-      $("#title").val(data[0])
-
-      $("#task1").val(data[1])
-
     })
-
+    console.log(wholeTasksData)
+   
 })
 
 //Tooltip related
