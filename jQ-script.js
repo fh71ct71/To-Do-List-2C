@@ -1,5 +1,7 @@
 $(document).ready(function(){
 
+    // version 2
+
     $("#date").text(new Date().toDateString())
 
     $("#bgR").click(function(){
