@@ -1,6 +1,6 @@
 $(document).ready(function () {
 
-  // version 2
+  // version 3
 
   $("#date").text(new Date().toDateString())
 
