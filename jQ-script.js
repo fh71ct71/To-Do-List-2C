@@ -1,202 +1,247 @@
-$(document).ready(function(){
+$(document).ready(function () {
 
-    // version 2
+  // version 2
 
-    $("#date").text(new Date().toDateString())
+  $("#date").text(new Date().toDateString())
 
-    $("#bgR").click(function(){
+  $("#bgR").click(function () {
 
-      $("body").removeClass("bg-primary")
+    $("body").removeClass("bg-primary")
 
-      $("body").removeClass("bg-secondary")
+    $("body").removeClass("bg-secondary")
 
-      $("body").removeClass("bg-warning")
+    $("body").removeClass("bg-warning")
 
-      $("body").removeClass("bg-success")
-      
-      $("body").addClass("bg-danger")
+    $("body").removeClass("bg-success")
 
-    })
+    $("body").addClass("bg-danger")
 
-    $("#bgG").click(function(){
+  })
 
-      $("body").removeClass("bg-secondary")
+  $("#bgG").click(function () {
 
-      $("body").removeClass("bg-primary")
+    $("body").removeClass("bg-secondary")
 
-      $("body").removeClass("bg-warning")
+    $("body").removeClass("bg-primary")
 
-      $("body").removeClass("bg-danger")
+    $("body").removeClass("bg-warning")
 
-      $("body").addClass("bg-success")
+    $("body").removeClass("bg-danger")
 
-    })
+    $("body").addClass("bg-success")
 
-    $("#bgB").click(function(){
+  })
 
-      $("body").removeClass("bg-danger")
+  $("#bgB").click(function () {
 
-      $("body").removeClass("bg-secondary")
+    $("body").removeClass("bg-danger")
 
-      $("body").removeClass("bg-warning")
+    $("body").removeClass("bg-secondary")
 
-      $("body").removeClass("bg-success")
+    $("body").removeClass("bg-warning")
 
-      $("body").addClass("bg-primary")
+    $("body").removeClass("bg-success")
 
-    })
+    $("body").addClass("bg-primary")
 
-    $("#bgY").click(function(){
+  })
 
-      $("body").removeClass("bg-success")
+  $("#bgY").click(function () {
 
-      $("body").removeClass("bg-secondary")
+    $("body").removeClass("bg-success")
 
-      $("body").removeClass("bg-danger")
+    $("body").removeClass("bg-secondary")
 
-      $("body").removeClass("bg-primary")
+    $("body").removeClass("bg-danger")
 
-      $("body").addClass("bg-warning")
+    $("body").removeClass("bg-primary")
 
-    })
+    $("body").addClass("bg-warning")
 
-    $("#bgGr").click(function(){
+  })
 
-      $("body").removeClass("bg-success")
+  $("#bgGr").click(function () {
 
-      $("body").removeClass("bg-primary")
+    $("body").removeClass("bg-success")
 
-      $("body").removeClass("bg-danger")
+    $("body").removeClass("bg-primary")
 
-      $("body").removeClass("bg-warning")
+    $("body").removeClass("bg-danger")
 
-      $("body").addClass("bg-secondary")
+    $("body").removeClass("bg-warning")
 
-    })
+    $("body").addClass("bg-secondary")
 
-    $("#tkR").click(function(){
+  })
 
-      $("#tkBG").removeClass("bg-primary")
+  $("#tkR").click(function () {
 
-      $("#tkBG").removeClass("bg-secondary")
+    $("#tkBG").removeClass("bg-primary")
 
-      $("#tkBG").removeClass("bg-warning")
+    $("#tkBG").removeClass("bg-secondary")
 
-      $("#tkBG").removeClass("bg-success")
+    $("#tkBG").removeClass("bg-warning")
 
-      $("#tkBG").addClass("bg-danger")
+    $("#tkBG").removeClass("bg-success")
 
-    })
+    $("#tkBG").addClass("bg-danger")
 
-    $("#tkG").click(function(){
+  })
 
-      $("#tkBG").removeClass("bg-secondary")
+  $("#tkG").click(function () {
 
-      $("#tkBG").removeClass("bg-primary")
+    $("#tkBG").removeClass("bg-secondary")
 
-      $("#tkBG").removeClass("bg-warning")
+    $("#tkBG").removeClass("bg-primary")
 
-      $("#tkBG").removeClass("bg-danger")
+    $("#tkBG").removeClass("bg-warning")
 
-      $("#tkBG").addClass("bg-success")
+    $("#tkBG").removeClass("bg-danger")
 
-    })
+    $("#tkBG").addClass("bg-success")
 
-    $("#tkB").click(function(){
+  })
 
-      $("#tkBG").removeClass("bg-danger")
+  $("#tkB").click(function () {
 
-      $("#tkBG").removeClass("bg-secondary")
+    $("#tkBG").removeClass("bg-danger")
 
-      $("#tkBG").removeClass("bg-warning")
+    $("#tkBG").removeClass("bg-secondary")
 
-      $("#tkBG").removeClass("bg-success")
+    $("#tkBG").removeClass("bg-warning")
 
-      $("#tkBG").addClass("bg-primary")
+    $("#tkBG").removeClass("bg-success")
 
-    })
+    $("#tkBG").addClass("bg-primary")
 
-    $("#tkY").click(function(){
+  })
 
-      $("#tkBG").removeClass("bg-success")
+  $("#tkY").click(function () {
 
-      $("#tkBG").removeClass("bg-secondary")
+    $("#tkBG").removeClass("bg-success")
 
-      $("#tkBG").removeClass("bg-danger")
+    $("#tkBG").removeClass("bg-secondary")
 
-      $("#tkBG").removeClass("bg-primary")
+    $("#tkBG").removeClass("bg-danger")
 
-      $("#tkBG").addClass("bg-warning")
+    $("#tkBG").removeClass("bg-primary")
 
-    })
+    $("#tkBG").addClass("bg-warning")
 
-    $("#tkGr").click(function(){
+  })
 
-      $("#tkBG").removeClass("bg-success")
+  $("#tkGr").click(function () {
 
-      $("#tkBG").removeClass("bg-primary")
+    $("#tkBG").removeClass("bg-success")
 
-      $("#tkBG").removeClass("bg-danger")
+    $("#tkBG").removeClass("bg-primary")
 
-      $("#tkBG").removeClass("bg-warning")
+    $("#tkBG").removeClass("bg-danger")
 
-      $("#tkBG").addClass("bg-secondary")
+    $("#tkBG").removeClass("bg-warning")
 
-    })
+    $("#tkBG").addClass("bg-secondary")
 
-    let wholeTasksData=[],titleList,taskData
+  })
 
-    $("#newListBtn").click(function(){
+  let taskData
 
-      $("#taskArea").removeClass("d-none")
+  $("#newListBtn").click(function () {
 
-      $("#listTitle").focus()
-          
-    })
+    $("#taskArea").removeClass("d-none")
 
-    $("#listTitle").keypress(function(e){
+    $("#listTitle").focus()
 
-      let key=e.which
+  })
 
-      if(key==13){
+  $("#listTitle").keypress(function (e) {
 
-        $("#task").focus()
+    let key = e.which
 
-        titleList=$(this).val()
+    if (key == 13) {
 
-      }
+      $("#task").focus()
 
-    })
+      titleList = $(this).val()
 
-    $("#task").keypress(function(e){
+    }
 
-      let key=e.which
+  })
 
-      if(key==13){
+  $("#task").keypress(function (e) {
 
-        taskData=$(this).val()
+    let key = e.which
 
-        $("#nextTask").append('<input type="text" class="form-control-plaintext form-control-sm mt-1 taskContent" style="color: white;">')
+    if (key == 13) {
 
-        $(".taskContent").last().val(taskData)
+      taskData = $(this).val()
 
-        wholeTasksData.push(taskData)
-        
-        $(this).val("")
+      $("#nextTask").text("")
 
-        $("#task").attr("placeholder", "Enter your next task here")
+      addTasks(taskData)
 
-      }
-    
-    })
-    console.log(wholeTasksData)
-   
+      $(this).val("")
+
+      $("#task").attr("placeholder", "Enter your next task here")
+
+    }
+
+  })
+
 })
+
+//Outside of Document
+
+let wholeTasksData = [], titleList, tempVariable
+
+function loadTasks() {
+
+  $("#listTitle").val(titleList)
+
+  wholeTasksData.forEach((value) => {
+
+    $("#nextTask").append(`<div class="row">
+  <div class="col-1"><input type="checkbox" class="form-check-input"></div>
+  <div class="col-10"><input type="text"
+          class="form-control-plaintext form-control-sm mt-1 taskContent" style="color: white;">
+  </div>
+  <div class="col-1">
+      <div class="del btn" onclick="deleteTask('${value}')">X</div>
+  </div>
+</div>`)
+
+    $(".taskContent").last().val(value)
+
+  })
+
+}
+
+function deleteTask(taskName) {
+
+  tempVariable = taskName
+
+  $("#nextTask").text("")
+
+  wholeTasksData = wholeTasksData.filter((value) => { return value != tempVariable })
+
+  loadTasks()
+
+}
+
+function addTasks(taskAdd) {
+
+  wholeTasksData.push(taskAdd)
+
+  loadTasks()
+
+}
 
 //Tooltip related
 
 var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
-        var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
-          
-          return new bootstrap.Tooltip(tooltipTriggerEl)
-        })
+
+var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+
+  return new bootstrap.Tooltip(tooltipTriggerEl)
+
+})

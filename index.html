@@ -12,12 +12,12 @@
 
     <title>To-Do-List</title>
 
-    <link rel="stylesheet" href="./Files/Images/mainLogo.jpg" type="images/x-icon">
+    <link rel="icon" href="./Files/Images/favicon.ico" type="images/x-icon">
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet">
 
     <link rel="stylesheet" type="text/css" href="styles.css">
-    
+
 </head>
 
 <body class="bg-primary">
@@ -30,7 +30,8 @@
 
                 <div class="dropdown">
 
-                    <img src="./Files/Images/hamburger-menu.jpg" width="30" height="30" data-bs-toggle="dropdown" data-bs-placement="right" title="Main Menu">
+                    <img src="./Files/Images/hamburger-menu.jpg" width="30" height="30" data-bs-toggle="dropdown"
+                        data-bs-placement="right" title="Main Menu">
 
                     <ul class="dropdown-menu">
 
@@ -39,20 +40,23 @@
                         <li class="dropdown-item">All Lists</li>
 
                         <li class="dropdown-item">Bin</li>
-                        
+
                     </ul>
 
                 </div>
 
             </div>
 
-            <div class="col-6 col-md-7 col-lg-8 col-xl-9 text-white d-flex align-items-center justify-content-center"><p class="h3" id="date"></p></div>
+            <div class="col-6 col-md-7 col-lg-8 col-xl-9 text-white d-flex align-items-center justify-content-center">
+                <p class="h3" id="date"></p>
+            </div>
 
             <div class="col d-flex align-items-center justify-content-center">
 
                 <div class="dropdown">
 
-                    <img src="./Files/Images/3d-brush-and-palette-png.webp" width="60" height="60" data-bs-toggle="dropdown" data-bs-placement="left" title="Background of Page">
+                    <img src="./Files/Images/3d-brush-and-palette-png.webp" width="60" height="60"
+                        data-bs-toggle="dropdown" data-bs-placement="left" title="Background of Page">
 
                     <ul class="dropdown-menu">
 
@@ -69,7 +73,7 @@
                     </ul>
 
                 </div>
-                
+
             </div>
 
         </div>
@@ -98,11 +102,14 @@
 
             <div class="col"></div>
 
-            <div class="col-10 col-md-8 col-lg-7 col-xl-6 bg-secondary border border-3 rounded-3" style="position: relative;" id="tkBG">
+            <div class="col-10 col-md-8 col-lg-7 col-xl-6 bg-secondary border border-3 rounded-3"
+                style="position: relative;" id="tkBG">
 
                 <div class="dropdown">
 
-                    <img src="./Files/Images/208-2081130_color-clipart-hd-png-download.png" class="rounded-circle" style="width: 30px;height: 30px;position: absolute;right: -20px;top: -10px;" data-bs-toggle="dropdown" data-bs-placement="top" title="Background of Task">
+                    <img src="./Files/Images/208-2081130_color-clipart-hd-png-download.png" class="rounded-circle"
+                        style="width: 30px;height: 30px;position: absolute;right: -20px;top: -10px;"
+                        data-bs-toggle="dropdown" data-bs-placement="top" title="Background of Task">
 
                     <ul class="dropdown-menu">
 
@@ -120,20 +127,22 @@
 
                 </div>
 
-                <input type="text" class="form-control mt-4 mx-auto" placeholder="Title" style="width: 60%;color: red;" id="listTitle">
+                <input type="text" class="form-control mt-4 mx-auto" placeholder="Title" style="width: 60%;color: red;"
+                    id="listTitle">
 
-                <input type="text" class="form-control mt-4 mx-auto form-control-sm" placeholder="Enter your first task here" style="width: 75%;color: blue;" id="task">
+                <input type="text" class="form-control mt-4 mx-auto form-control-sm"
+                    placeholder="Enter your first task here" style="width: 75%;color: blue;" id="task">
 
                 <div class="mt-4 mb-4" id="nextTask"></div>
-                
+
             </div>
 
             <div class="col"></div>
 
         </div>
-        
+
     </div>
-    
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"></script>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
