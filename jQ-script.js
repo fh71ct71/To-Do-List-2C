@@ -206,31 +206,35 @@ function loadTasks() {
           class="form-control-plaintext form-control-sm mt-1 taskContent" style="color: white;">
   </div>
   <div class="col-1">
-      <div class="del btn" onclick="deleteTask('${value}')">X</div>
+      <div class="del btn" onclick="deleteTask('${value.id}')">X</div>
   </div>
 </div>`)
 
-    $(".taskContent").last().val(value)
+    $(".taskContent").last().val(value.name)
 
   })
 
 }
 
-function deleteTask(taskName) {
-
-  tempVariable = taskName
+function deleteTask(taskID) {
 
   $("#nextTask").text("")
 
-  wholeTasksData = wholeTasksData.filter((value) => { return value != tempVariable })
+  wholeTasksData = wholeTasksData.filter((value) => { return value.id != taskID })
 
   loadTasks()
 
 }
 
+let i = 0, taskObject
+
 function addTasks(taskAdd) {
 
-  wholeTasksData.push(taskAdd)
+  i++
+
+  taskObject = { id: "x" + i, name: taskAdd, strike: "false" }
+
+  wholeTasksData.push(taskObject)
 
   loadTasks()
 
