@@ -192,7 +192,13 @@ $(document).ready(function () {
 
 //Outside of Document
 
-let wholeTasksData = [], titleList, tempVariable
+let wholeTasksData = [
+  { id: "x1", name: "Firdous", strike: true },
+  { id: "x2", name: "Ramees", strike: true },
+  { id: "x3", name: "Danish", strike: false }
+], titleList = "Sample To-Do", tempVariable
+
+loadTasks()
 
 function loadTasks() {
 
@@ -200,19 +206,63 @@ function loadTasks() {
 
   wholeTasksData.forEach((value) => {
 
-    $("#nextTask").append(`<div class="row">
-  <div class="col-1"><input type="checkbox" class="form-check-input"></div>
+    if (value.strike) {
+
+      $("#nextTask").append(`<div class="row">
+  <div class="col-1"><input type="checkbox" class="form-check-input" onclick="strikeOver('${value.strike}','${value.id}')" checked></div>
+  <div class="col-10"><input type="text"
+          class="form-control-plaintext form-control-sm mt-1 taskContent text-decoration-line-through" style="color: white;">
+  </div>
+  <div class="col-1">
+      <div class="btn" onclick="deleteTask('${value.id}')">X</div>
+  </div>
+</div>`)
+
+      $(".taskContent").last().val(value.name)
+
+    } else {
+
+      $("#nextTask").append(`<div class="row">
+  <div class="col-1"><input type="checkbox" class="form-check-input" onclick="strikeOver('${value.strike}','${value.id}')"></div>
   <div class="col-10"><input type="text"
           class="form-control-plaintext form-control-sm mt-1 taskContent" style="color: white;">
   </div>
   <div class="col-1">
-      <div class="del btn" onclick="deleteTask('${value.id}')">X</div>
+      <div class="btn" onclick="deleteTask('${value.id}')">X</div>
   </div>
 </div>`)
 
-    $(".taskContent").last().val(value.name)
+      $(".taskContent").last().val(value.name)
+
+    }
 
   })
+
+}
+
+function strikeOver(strikeValue, taskID) {
+
+  $("#nextTask").text("")
+
+  wholeTasksData.forEach((value) => {
+
+    if (value.id == taskID) {
+
+      if (strikeValue == "true") {
+
+        value.strike = false
+
+      } else {
+
+        value.strike = true
+
+      }
+
+    }
+
+  })
+
+  loadTasks()
 
 }
 
@@ -226,13 +276,13 @@ function deleteTask(taskID) {
 
 }
 
-let i = 0, taskObject
+let i = 3, taskObject
 
 function addTasks(taskAdd) {
 
   i++
 
-  taskObject = { id: "x" + i, name: taskAdd, strike: "false" }
+  taskObject = { id: "x" + i, name: taskAdd, strike: false }
 
   wholeTasksData.push(taskObject)
 
