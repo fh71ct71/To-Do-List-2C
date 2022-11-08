@@ -192,13 +192,7 @@ $(document).ready(function () {
 
 //Outside of Document
 
-let wholeTasksData = [
-  { id: "x1", name: "Firdous", strike: true },
-  { id: "x2", name: "Ramees", strike: true },
-  { id: "x3", name: "Danish", strike: false }
-], titleList = "Sample To-Do", tempVariable
-
-loadTasks()
+let wholeTasksData = [], titleList, tempVariable
 
 function loadTasks() {
 
@@ -225,7 +219,7 @@ function loadTasks() {
       $("#nextTask").append(`<div class="row">
   <div class="col-1"><input type="checkbox" class="form-check-input" onclick="strikeOver('${value.strike}','${value.id}')"></div>
   <div class="col-10"><input type="text"
-          class="form-control-plaintext form-control-sm mt-1 taskContent" style="color: white;">
+          class="form-control-plaintext form-control-sm mt-1 taskContent" style="color: white;" onfocus="editTask('${value.id}',this)">
   </div>
   <div class="col-1">
       <div class="btn" onclick="deleteTask('${value.id}')">X</div>
@@ -233,6 +227,36 @@ function loadTasks() {
 </div>`)
 
       $(".taskContent").last().val(value.name)
+
+    }
+
+  })
+
+}
+
+function editTask(taskID, taskThis) {
+
+  wholeTasksData.forEach((value) => {
+
+    if (value.id == taskID) {
+
+      $(taskThis).keyup(function (e) {
+
+        let key = e.which
+
+        if (key != 13) {
+
+          value.name = $(taskThis).val()
+
+        } else {
+
+          $("#nextTask").text("")
+
+          loadTasks()
+
+        }
+
+      })
 
     }
 
@@ -276,7 +300,7 @@ function deleteTask(taskID) {
 
 }
 
-let i = 3, taskObject
+let i = 0, taskObject
 
 function addTasks(taskAdd) {
 
